@@ -1,17 +1,21 @@
-Algoritmo ArcosGar
+# Experimento : Algoritmo ArcosGar
 
 ### Problema
 El entrenamiento típico de una red neuronal implica un conocimiento inicial prácticamente aleatorio. Estructura de la red, tasa de aprendizaje, pesos iniciales... Partiendo de esto, el algoritmo funciona, pero es lento y tiene muchas cositas.
 
 ### Posible solución: evolución
+
 ¿Y si dejo que la evolución haga el trabajo?
-  -	 Parte de la estructura más sencilla (inputs y outputs)
+
+  -	 Empieza con redes con la estructura más sencilla (inputs y outputs)
+
   -	 PROBLEMA: ¿alguna vez se van a crear capas nuevas? ¿Cómo va a competir una red con pesos aleatorios con redes entrenadas, aunque sean más sencillas?  
 
-  -	 SOLUCIÓN: Cuando una mutación añada una neurona, sea en la capa que sea, todas sus conexiones serán nulas. Las conexiones del resto de las capas no se verán afectadas. Es decir, que las redes creadas tendrán capas totalmente conectadas unas con otras (la primera con la segunda, pero también con la tercera, con la cuarta, ...).
+     SOLUCIÓN: Cuando una mutación añada una neurona, sea en la capa que sea, todas sus conexiones serán nulas. Las conexiones del resto de las capas no se verán afectadas. Es decir, que las redes creadas tendrán capas totalmente conectadas unas con otras (la primera con la segunda, pero también con la tercera, con la cuarta, ...).
 
 
 ### Mutación de pesos
+
   -	 Prueba a mutar los pesos variando en % de su valor. Que lo más probable sean cambios pequeños (1-10%) pero que también puedan ocurrir cambios grandes. Esto se puede aplicar siempre a todos los pesos.
 
   -	 Muta algunos pesos con valores totalmente nuevos y aleatorios. 
@@ -21,18 +25,21 @@ El entrenamiento típico de una red neuronal implica un conocimiento inicial pr�
 
 ### Mutación de estructura
 
-  -	 ¿Mucho menos probable que la mutación de pesos? Experimenta!
+  -	 ¿Menos probable que la mutación de pesos? Experimenta!
 
   -	 Empieza con la estructura más sencilla (inputs vs outputs) y ve mutando. 
 
   -	 Añade un nodo a cualquier capa oculta con pesos nulos. 
 
   -	 Elimina un nodo de cualquier capa oculta.
+
   -	 Pon a 0 una conexión cualquiera.
+
 
 ### Info que debo loguear en cada generación
 
   -	 Info para poder reproducir al mejor individuo de la generación.
+
   -	 Fitness del mejor individuo.
   -	 Fitness medio de los individuos.
   -	 Número de mutaciones de cada tipo realizadas.
